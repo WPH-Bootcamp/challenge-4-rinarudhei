@@ -1,38 +1,25 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/6wjo_EEX)
-# Challenge 4 - The Interactive To-Do List
+# The Interactive To-Do List App
 
-# Description
+This is a simple To-Do list CLI App.
 
-In this challenge, you'll build a command-line To-Do List application using JavaScript. This challenge is designed to reinforce your understanding of core JavaScript concepts including arrays, objects, functions, control flow, and user input handling.
+## How to start
 
-You will be given a basic project structure with function stubs, and your task will be to implement the logic to create a fully functional to-do list manager.
+First, run `npm install` to install dependencies.
+Then, run `npm run dev` to start the To-Do List app. Follow the instruction from the terminal!
 
-# Folder Structure
+## To-Do commands
 
-You are provided with the following folder structure:
-xq
+- `add`: Add a todo into list
+- `list`: Show todo list with each status
+- `complete`: Mark a todo as completed
+- `delete`: Delete a todo from the list
+- `exit`: Exit To-Do List app
 
-```
-root/
-├── index.js
-├── __test__/
-│ └── index.spec.js
-├── readme.md
-├── package.json
-├── package-lock.json
-└── .gitignore
-```
+## Backend concept
 
-You will only need to modify the index.js file for this assignment.
-
-# Assignment Objectives
-
-## 1. Core Functionality Implementation
-
-### `generateUniqueId()`
-
-- Implement this function to return a unique string ID
-- Combine timestamp and random string for uniqueness
+- Every todo object has a unique id, activity string text, and complete status field (id, text, status)
+- Every todo object will be pushed into todos array
+- Data only saved in memory so it will not persist (Your todo list data will be empty every time you start the app)
 
 ### `addTodo()`
 
@@ -74,80 +61,23 @@ You will only need to modify the index.js file for this assignment.
 - Handle invalid commands
 - Exit mechanism
 
-## 2. Expected Output Examples
+## Unit-test 100% coverage
 
-### Adding a Todo:
-
-[ACTIVE] | Buy groceries
-
-[ACTIVE] | Do laundry
-Enter the NUMBER of the to-do to mark as completed: 1
-To-do "Buy groceries" marked as completed.
-
-### Deleting:
-
-[DONE] | Buy groceries
-
-[ACTIVE] | Do laundry
-Enter the NUMBER of the to-do to delete: 2
-To-do "Do laundry" deleted.
-
-### Listing Todos:
-
---- YOUR TO-DO LIST ---
-[DONE] | Buy groceries
-[ACTIVE] | Study JavaScript
-
-## 3. Testing Your Implementation
-
-We've provided unit tests to verify your implementation. To run the tests:
-
-```
-npm run test
-```
-
-Your implementation is correct when you achieve 100% test coverage:
+This app is unit-tested with 100% coverage to make sure top-notch code quality
 
 ```
 ----------|---------|----------|---------|---------|-------------------
 File      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
 ----------|---------|----------|---------|---------|-------------------
-All files |   98.38 |    96.96 |     100 |   98.38 |
- index.js |   98.38 |    96.96 |     100 |   98.38 | 116
+All files |   98.59 |       96 |     100 |   98.52 |
+ index.js |   98.59 |       96 |     100 |   98.52 | 123
 ----------|---------|----------|---------|---------|-------------------
 Test Suites: 1 passed, 1 total
 Tests:       10 passed, 10 total
 ```
 
-the uncovered line should be the line when you call runTodoApp()
-
-### 4. Getting Started
-
-Install dependencies:
-
-```
-npm install
-```
-
-To run your to-do list application:
-
-```
-npm run dev
-```
-
 ---
 
-### 5. Grading Criteria
+```
 
-1. Requirement fulfillment
-2. JavaScript usage
-3. problem solving
-4. code clarity
-
-# How to Upload your Challenge
-
-Check this module: [click this](https://orchid-clematis-3e4.notion.site/Panduan-Penggunaan-Git-Untuk-Upload-Assignment-e2d80a19b3684f5d8f1a4209dcf85445?pvs=73)
-
----
-
-🎉 Congratulations on working on this assignment! Utilize the _playground_ feature in Figma to help you understand how the design should look on various devices. Keep experimenting and don't hesitate to look for references if you encounter difficulties. You can definitely produce great work! 🚀 Keep up the spirit, cheers! 🎈
+```
