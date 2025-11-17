@@ -35,9 +35,6 @@ function addTodo() {
 function markTodoCompleted() {
   listTodos();
 
-  if (todos.length === 0) {
-    return;
-  }
   let numberString = prompt("Select the number of completed activity: ");
   let number = +numberString.trim();
   if (!isValidNumberSelection(number)) {
@@ -46,10 +43,6 @@ function markTodoCompleted() {
 
   let index = number - 1;
   let selectedTodo = todos[index];
-  if (selectedTodo.isComplete) {
-    console.log("\n\nTodo is already marked complete\n\n");
-    return;
-  }
   selectedTodo.isComplete = true;
 
   console.log("\n\n Todo mark as complete SUCCESS\n\n");
@@ -66,32 +59,20 @@ function isValidNumberSelection(number) {
 
 function deleteTodo() {
   listTodos();
-  if (todos.length === 0) {
-    return;
-  }
   let numberString = prompt("Select the number of a todo to be deleted: ");
   let number = +numberString.trim();
   if (!isValidNumberSelection(number)) {
     return;
   }
 
-  let newTodos = [];
-  for (let i = 0; i < todos.length; i++) {
-    if (i === number - 1) {
-      continue;
-    }
-
-    newTodos.push(todos[i]);
-  }
-
-  todos = newTodos;
+  todos.splice(number - 1, 1);
   console.log("\n\nDelete todo SUCCESS\n\n");
 }
 
 function listTodos() {
   console.log("\n\n--- YOUR TO-DO LIST ---");
   if (todos.length === 0) {
-    console.log("\n\nNo to-dos to display.\n\n");
+    console.log("No to-dos to display.");
     return;
   }
   for (let i = 0; i < todos.length; i++) {
